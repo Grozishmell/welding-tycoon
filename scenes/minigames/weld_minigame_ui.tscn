@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b2mgiq2rkcvkh"]
+
+[ext_resource type="Script" uid="uid://c4ol5t0rydsmv" path="res://scripts/minigames/weld_minigame.gd" id="1_adu3v"]
+
+[node name="WeldMinigameUI" type="CanvasLayer" unique_id=337254431]
+
+[node name="Game" type="Node2D" parent="." unique_id=1159442808]
+script = ExtResource("1_adu3v")

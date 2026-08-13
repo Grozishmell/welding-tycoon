@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bpqkv4ggpcego"]
 
 [ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_4eauj"]
+[ext_resource type="PackedScene" uid="uid://dqjg4j33jpe3h" path="res://scenes/stations/weld_station.tscn" id="2_27fb1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x58up"]
 
@@ -50,3 +51,6 @@ transform = Transform3D(0.81915206, 0.43938503, -0.36868784, 0, 0.64278764, 0.76
 environment = SubResource("Environment_1fw5a")
 
 [node name="Player" parent="." unique_id=471903635 instance=ExtResource("1_4eauj")]
+
+[node name="weld_station" parent="." unique_id=1464808542 instance=ExtResource("2_27fb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
