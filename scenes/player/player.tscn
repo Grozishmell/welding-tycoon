@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cc1ok33tr2ank"]
+
+[ext_resource type="Script" uid="uid://bnmaadfroiebm" path="res://scripts/player/player.gd" id="1_8afob"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1fw5a"]
+radius = 0.35
+height = 1.8
+
+[node name="Player" type="CharacterBody3D" unique_id=471903635]
+collision_layer = 2
+script = ExtResource("1_8afob")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1731655437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_1fw5a")
+
+[node name="Head" type="Node3D" parent="." unique_id=2026115581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=668262386]
+near = 0.1
+far = 200.0
+
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D" unique_id=1912337626]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 4
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1612607870]
+
+[node name="Crosshair" type="Label" parent="HUD" unique_id=1079448980]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "+"
+
+[node name="Prompt" type="Label" parent="HUD" unique_id=2142554853]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -150.0
+offset_right = 20.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1

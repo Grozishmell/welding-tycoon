@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bpqkv4ggpcego"]
+
+[ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_4eauj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x58up"]
+
+[sub_resource type="Sky" id="Sky_apvjx"]
+sky_material = SubResource("ProceduralSkyMaterial_x58up")
+
+[sub_resource type="Environment" id="Environment_1fw5a"]
+background_mode = 2
+sky = SubResource("Sky_apvjx")
+
+[node name="TestWorkshop" type="Node3D" unique_id=929468886]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=873855223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+collision_mask = 0
+size = Vector3(12, 0.2, 12)
+
+[node name="WallNorth" type="CSGBox3D" parent="." unique_id=788154407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -6)
+use_collision = true
+collision_mask = 0
+size = Vector3(12, 3, 0.2)
+
+[node name="WallSouth" type="CSGBox3D" parent="." unique_id=498278417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 6)
+use_collision = true
+collision_mask = 0
+size = Vector3(12, 3, 0.2)
+
+[node name="WallEast" type="CSGBox3D" parent="." unique_id=1091909815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.5, 0)
+use_collision = true
+collision_mask = 0
+size = Vector3(0.2, 3, 12)
+
+[node name="WallWest" type="CSGBox3D" parent="." unique_id=455157965]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.5, 0)
+use_collision = true
+collision_mask = 0
+size = Vector3(0.2, 3, 12)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=124715038]
+transform = Transform3D(0.81915206, 0.43938503, -0.36868784, 0, 0.64278764, 0.76604444, 0.57357645, -0.62750685, 0.5265408, -6.040037, 6.6142097, 5.6480103)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=122493782]
+environment = SubResource("Environment_1fw5a")
+
+[node name="Player" parent="." unique_id=471903635 instance=ExtResource("1_4eauj")]
