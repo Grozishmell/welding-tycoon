@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dftsn05dqemny"]
+
+[ext_resource type="Script" uid="uid://cp1hrtsogxgvk" path="res://scripts/door/door.gd" id="1_bu3y2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1fw5a"]
+size = Vector3(1.1, 2.1, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_08jtm"]
+size = Vector3(1.1, 2.1, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bu3y2"]
+size = Vector3(2.4, 2.2, 2.6)
+
+[node name="Door" type="Node3D" unique_id=2129604160]
+script = ExtResource("1_bu3y2")
+
+[node name="Hinge" type="Node3D" parent="." unique_id=1861854125]
+
+[node name="Leaf" type="AnimatableBody3D" parent="Hinge" unique_id=2101303004]
+sync_to_physics = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hinge/Leaf" unique_id=1976637305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.05, 0)
+mesh = SubResource("BoxMesh_1fw5a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Leaf" unique_id=1846534910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.05, 0)
+shape = SubResource("BoxShape3D_08jtm")
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=1921884112]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1951059488]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.1, 0)
+shape = SubResource("BoxShape3D_bu3y2")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
