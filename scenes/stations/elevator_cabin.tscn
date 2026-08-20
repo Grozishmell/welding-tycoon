@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cqj1k82i53fip"]
+
+[node name="ElevatorCabin" type="Node3D" unique_id=727772744]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1326445314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+use_collision = true
+size = Vector3(2.4, 0.1, 2.4)
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=444850549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65, 0)
+use_collision = true
+size = Vector3(2.4, 0.1, 2.4)
+
+[node name="WallBack" type="CSGBox3D" parent="." unique_id=1090570605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -1.15)
+use_collision = true
+size = Vector3(2.4, 2.6, 0.1)
+
+[node name="WallLeft" type="CSGBox3D" parent="." unique_id=2040483592]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15, 1.3, 0)
+use_collision = true
+size = Vector3(0.1, 2.6, 2.4)
+
+[node name="WallRight" type="CSGBox3D" parent="." unique_id=1952011132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, 1.3, 0)
+use_collision = true
+size = Vector3(0.1, 2.6, 2.4)
+
+[node name="CabinLight" type="OmniLight3D" parent="." unique_id=468255482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+light_color = Color(1, 0.8509804, 0.65882355, 1)
+shadow_enabled = true
+omni_range = 4.0

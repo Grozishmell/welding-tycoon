@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dsubvf0cooo2s"]
+
+[ext_resource type="Script" uid="uid://bhagko1xip174" path="res://scripts/stations/elevator_button.gd" id="1_8bcpp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x58up"]
+size = Vector3(0.3, 0.3, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_apvjx"]
+size = Vector3(0.12, 0.12, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gk6bl"]
+albedo_color = Color(0.288518, 0.28851798, 0.28851798, 1)
+emission_enabled = true
+emission = Color(1, 0.6156863, 0.3019608, 1)
+emission_energy_multiplier = 2.0
+
+[node name="ElevatorButton" type="StaticBody3D" unique_id=1005798652]
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("1_8bcpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=106229689]
+shape = SubResource("BoxShape3D_x58up")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1869004168]
+mesh = SubResource("BoxMesh_apvjx")
+surface_material_override/0 = SubResource("StandardMaterial3D_gk6bl")

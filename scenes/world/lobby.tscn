@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_u3nvq"]
 [ext_resource type="PackedScene" uid="uid://dftsn05dqemny" path="res://scenes/door/door.tscn" id="2_pasi8"]
+[ext_resource type="PackedScene" uid="uid://cqj1k82i53fip" path="res://scenes/stations/elevator_cabin.tscn" id="3_pwvnl"]
+[ext_resource type="PackedScene" uid="uid://dsubvf0cooo2s" path="res://scenes/stations/elevator_button.tscn" id="4_mn8lo"]
+[ext_resource type="Resource" uid="uid://ds77uh4bqsrip" path="res://data/levels/parking.tres" id="5_krpwf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pasi8"]
 
@@ -60,10 +63,95 @@ collision_mask = 0
 size = Vector3(4.5, 3, 0.2)
 
 [node name="Door" parent="." unique_id=2129604160 instance=ExtResource("2_pasi8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -4.8833423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -4.9426107)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1420201938]
 transform = Transform3D(0.81915206, 0.43938503, -0.36868784, 0, 0.64278764, 0.76604444, 0.57357645, -0.62750685, 0.5265408, -6.040037, 6.6142097, 5.6480103)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=389435546]
 environment = SubResource("Environment_pwvnl")
+
+[node name="Bridge" type="CSGBox3D" parent="." unique_id=240187576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010915756, -0.1, -19.04119)
+use_collision = true
+collision_mask = 0
+size = Vector3(2, 0.1, 30)
+
+[node name="Platform_for_Elevator" type="CSGBox3D" parent="." unique_id=431406154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012452126, -0.1, -35.690628)
+use_collision = true
+collision_mask = 0
+size = Vector3(5, 0.1, 5)
+
+[node name="Abyss" type="CSGBox3D" parent="." unique_id=1865227890]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026224136, -8.874431, -22.559341)
+use_collision = true
+collision_mask = 0
+size = Vector3(50, 0.1, 50)
+
+[node name="Wall2" type="CSGBox3D" parent="." unique_id=130320599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12172127, 15.820861, -47.571365)
+use_collision = true
+collision_mask = 0
+size = Vector3(50, 50, 0.1)
+
+[node name="Wall3" type="CSGBox3D" parent="." unique_id=446391748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.665485, 15.820861, -23.011454)
+use_collision = true
+collision_mask = 0
+size = Vector3(0.1, 50, 50)
+
+[node name="Wall4" type="CSGBox3D" parent="." unique_id=1894723031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.613823, 15.820861, -22.879133)
+use_collision = true
+collision_mask = 0
+size = Vector3(0.1, 50, 50)
+
+[node name="Wall5" type="CSGBox3D" parent="." unique_id=135704823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12172127, -7.5728774, -4.9405975)
+use_collision = true
+collision_mask = 0
+size = Vector3(50, 15, 0.1)
+
+[node name="Wall6" type="CSGBox3D" parent="." unique_id=7804538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12172127, 22.327578, -4.9405975)
+use_collision = true
+collision_mask = 0
+size = Vector3(50, 35, 0.1)
+
+[node name="Wall7" type="CSGBox3D" parent="." unique_id=1948134296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.079792, 2.351738, -4.9405975)
+use_collision = true
+collision_mask = 0
+size = Vector3(30, 20, 0.1)
+
+[node name="Wall8" type="CSGBox3D" parent="." unique_id=1736273370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.145237, 2.351738, -4.9405975)
+use_collision = true
+collision_mask = 0
+size = Vector3(30, 20, 0.1)
+
+[node name="Abyss2" type="CSGBox3D" parent="." unique_id=955792310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026224136, 39.199013, -22.559341)
+use_collision = true
+collision_mask = 0
+size = Vector3(50, 0.1, 50)
+
+[node name="Floor2" type="CSGBox3D" parent="." unique_id=1458380285]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8454022, 0)
+use_collision = true
+collision_mask = 0
+size = Vector3(10, 0.1, 10)
+
+[node name="ElevatorCabin" parent="." unique_id=727772744 instance=ExtResource("3_pwvnl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003077507, 0.07788229, -36.721874)
+
+[node name="ElevatorButton" parent="." unique_id=1005798652 instance=ExtResource("4_mn8lo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05745274, 1.2292631, -37.806877)
+level = ExtResource("5_krpwf")
+cabin_light_path = NodePath("../ElevatorCabin/CabinLight")
+
+[node name="Default" type="Marker3D" parent="." unique_id=2095073516 groups=["spawn_points"]]
+
+[editable path="ElevatorCabin"]

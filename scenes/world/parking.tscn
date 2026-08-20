@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b6sjfmpjfitdp"]
+
+[ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_7qu8r"]
+[ext_resource type="PackedScene" uid="uid://cqj1k82i53fip" path="res://scenes/stations/elevator_cabin.tscn" id="2_ekcud"]
+
+[node name="Parking" type="Node3D" unique_id=1310509832]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1089284992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(10, 0.1, 10)
+
+[node name="FromElevatorInParking" type="Marker3D" parent="." unique_id=2017479810 groups=["spawn_points"]]
+
+[node name="Player" parent="." unique_id=471903635 instance=ExtResource("1_7qu8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46361285, 0)
+
+[node name="ElevatorCabin" parent="." unique_id=727772744 instance=ExtResource("2_ekcud")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

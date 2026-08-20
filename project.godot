@@ -15,11 +15,19 @@ run/main_scene="uid://cnmcub6fh10ut"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*uid://2b3hweurt6q"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+spawn_points=""
 
 [input]
 
