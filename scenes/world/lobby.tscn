@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://cnmcub6fh10ut"]
 
 [ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_u3nvq"]
-[ext_resource type="Texture2D" uid="uid://cdragrki5tm5q" path="res://Textures/wall_01.png" id="2_dgd82"]
 [ext_resource type="PackedScene" uid="uid://dftsn05dqemny" path="res://scenes/door/door.tscn" id="2_pasi8"]
 [ext_resource type="PackedScene" uid="uid://cqj1k82i53fip" path="res://scenes/stations/elevator_cabin.tscn" id="3_pwvnl"]
 [ext_resource type="PackedScene" uid="uid://dsubvf0cooo2s" path="res://scenes/stations/elevator_button.tscn" id="4_mn8lo"]
 [ext_resource type="Resource" uid="uid://ds77uh4bqsrip" path="res://data/levels/parking.tres" id="5_krpwf"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr3w6"]
-albedo_texture = ExtResource("2_dgd82")
+[ext_resource type="MeshLibrary" uid="uid://c53rwjw0yxgei" path="res://textures_meshs/testplace_walls/tiless_wallss_001.tres" id="6_dgd82"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pasi8"]
 
@@ -29,25 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 use_collision = true
 collision_mask = 0
 size = Vector3(10, 0.1, 10)
-
-[node name="WallSouth" type="CSGBox3D" parent="." unique_id=825045238]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.427166, 4.913695)
-material_override = SubResource("StandardMaterial3D_yr3w6")
-use_collision = true
-collision_mask = 0
-size = Vector3(10, 5, 0.2)
-
-[node name="WallWest" type="CSGBox3D" parent="." unique_id=1402807963]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9884267, 2.427166, 0.022797108)
-use_collision = true
-collision_mask = 0
-size = Vector3(0.2, 5, 10)
-
-[node name="WallEast" type="CSGBox3D" parent="." unique_id=674361768]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9589972, 2.427166, 0.022797108)
-use_collision = true
-collision_mask = 0
-size = Vector3(0.2, 5, 10)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=694267731]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7575257, 2.4, -5)
@@ -143,12 +121,6 @@ use_collision = true
 collision_mask = 0
 size = Vector3(50, 0.1, 50)
 
-[node name="Floor2" type="CSGBox3D" parent="." unique_id=1458380285]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8454022, 0)
-use_collision = true
-collision_mask = 0
-size = Vector3(10, 0.1, 10)
-
 [node name="ElevatorCabin" parent="." unique_id=727772744 instance=ExtResource("3_pwvnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003077507, 0.07788229, -36.721874)
 
@@ -158,5 +130,32 @@ level = ExtResource("5_krpwf")
 cabin_light_path = NodePath("../ElevatorCabin/CabinLight")
 
 [node name="Default" type="Marker3D" parent="." unique_id=2095073516 groups=["spawn_points"]]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1171950194]
+transform = Transform3D(1, 0, 0, 0, -0.0040195324, 0.99999195, 0, -0.99999195, -0.0040195324, 0, 4.6621647, 0)
+light_color = Color(0.75806504, 0.5732277, 0.37320614, 1)
+light_energy = 3.059
+light_volumetric_fog_energy = 5.119
+distance_fade_begin = 181.94
+spot_range = 105.271
+spot_attenuation = 0.21
+spot_angle = 81.53
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SpotLight3D" unique_id=792275179]
+transform = Transform3D(1, 0, 0, 0, -0.0040195445, 0.99999183, 0, -0.99999183, -0.0040195454, -14.593315, 1.5806446, -1.5258815)
+light_color = Color(0.75806504, 0.5732277, 0.37320614, 1)
+light_energy = 3.059
+light_volumetric_fog_energy = 5.119
+distance_fade_begin = 181.94
+spot_range = 105.271
+spot_attenuation = 0.21
+spot_angle = 81.53
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1559544373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 1)
+mesh_library = ExtResource("6_dgd82")
+data = {
+"cells": PackedInt32Array(65534, 1, 655360, 65535, 1, 655360, 0, 1, 655360, 0, 0, 1048578, 0, 65535, 1048578, 1, 65535, 1441792, 65535, 65535, 1048578, 65534, 65535, 1048578, 65534, 0, 1048578, 65535, 0, 1048578, 1, 65534, 1441792, 0, 65534, 1048578, 65535, 65534, 1048578, 65534, 65534, 1048578, 65533, 65534, 1048576, 65533, 65533, 1048576, 65534, 65533, 1048578, 65535, 65533, 1048578, 0, 65533, 1048578, 1, 65533, 1441792, 1, 0, 1441792, 1, 1, 1441793, 65533, 1, 655361, 65533, 65535, 1048579, 65533, 0, 655363, 65532, 0, 655360, 65531, 0, 655360, 65530, 0, 655360, 65529, 0, 655360, 65532, 65535, 0, 65531, 65535, 0, 65530, 65535, 0, 65529, 65535, 0, 65528, 65535, 0, 65527, 65535, 1048577, 65527, 0, 1048576, 65528, 0, 1441795, 65527, 1, 1048576, 65527, 2, 1048576, 65527, 3, 1048576, 65528, 1, 1441792, 65528, 2, 1441792, 65528, 3, 1441792, 65527, 4, 1048579, 65528, 4, 3, 65526, 4, 0, 65525, 4, 0, 65529, 4, 0, 65524, 4, 1048577, 65530, 4, 1, 65530, 5, 1441792, 65530, 6, 1441792, 65530, 7, 1441793, 65529, 7, 655360, 65528, 7, 655360, 65527, 7, 655360, 65526, 7, 655360, 65525, 7, 655360, 65524, 7, 655361, 65524, 6, 1048576, 65524, 5, 1048576, 65529, 5, 1048578, 65528, 5, 1048578, 65527, 5, 1048578, 65526, 5, 1048578, 65525, 5, 1048578, 65526, 6, 1048578, 65525, 6, 1048578, 65529, 6, 1048578, 65528, 6, 1048578, 65527, 6, 1048578)
+}
 
 [editable path="ElevatorCabin"]

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdragrki5tm5q"
-path.s3tc="res://.godot/imported/wall_01.png-f3b772861e02cb27d3c64005e0164ce6.s3tc.ctex"
+uid="uid://2l4nx0vigfut"
+path.s3tc="res://.godot/imported/tiles_wall_01_atlas_light.png-e0e297a915fd06af6154dc5d8142ec2a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "52900f8aed8e4e370ac418c5d5e5f508"
+}
 
 [deps]
 
-source_file="res://Textures/wall_01.png"
-dest_files=["res://.godot/imported/wall_01.png-f3b772861e02cb27d3c64005e0164ce6.s3tc.ctex"]
+source_file="res://textures_meshs/tiles_wall_01_atlas_light.png"
+dest_files=["res://.godot/imported/tiles_wall_01_atlas_light.png-e0e297a915fd06af6154dc5d8142ec2a.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://textures_meshs/tiles_wall_01_atlas_light.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
