@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://cnmcub6fh10ut"]
 
 [ext_resource type="PackedScene" uid="uid://cc1ok33tr2ank" path="res://scenes/player/player.tscn" id="1_u3nvq"]
+[ext_resource type="Texture2D" uid="uid://cdragrki5tm5q" path="res://Textures/wall_01.png" id="2_dgd82"]
 [ext_resource type="PackedScene" uid="uid://dftsn05dqemny" path="res://scenes/door/door.tscn" id="2_pasi8"]
 [ext_resource type="PackedScene" uid="uid://cqj1k82i53fip" path="res://scenes/stations/elevator_cabin.tscn" id="3_pwvnl"]
 [ext_resource type="PackedScene" uid="uid://dsubvf0cooo2s" path="res://scenes/stations/elevator_button.tscn" id="4_mn8lo"]
 [ext_resource type="Resource" uid="uid://ds77uh4bqsrip" path="res://data/levels/parking.tres" id="5_krpwf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yr3w6"]
+albedo_texture = ExtResource("2_dgd82")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pasi8"]
 
@@ -28,6 +32,7 @@ size = Vector3(10, 0.1, 10)
 
 [node name="WallSouth" type="CSGBox3D" parent="." unique_id=825045238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.427166, 4.913695)
+material_override = SubResource("StandardMaterial3D_yr3w6")
 use_collision = true
 collision_mask = 0
 size = Vector3(10, 5, 0.2)
